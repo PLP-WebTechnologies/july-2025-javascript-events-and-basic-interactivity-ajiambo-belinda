@@ -26,7 +26,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// Part 3: Toggle Light/Dark mode
+// Light/Dark Mode toggle
 const toggleModeBtn = document.getElementById('toggle-mode-btn');
 toggleModeBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');

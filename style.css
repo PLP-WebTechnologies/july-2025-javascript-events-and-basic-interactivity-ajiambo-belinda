@@ -1,10 +1,14 @@
-/* Base Styles */
+/* Global Reset and Base */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
   background-color: #fafafa;
+  color: #333;
   margin: 0;
-  padding: 0 20px;
+  padding: 20px;
   line-height: 1.6;
 }
 
@@ -12,251 +16,271 @@ body {
 h1 {
   text-align: center;
   color: #b85c90;
-  font-size: 2.8rem;
-  margin-top: 30px;
   margin-bottom: 20px;
 }
 
 h2 {
   color: #b85c90;
-  margin-top: 40px;
-  margin-bottom: 1rem;
   border-bottom: 2px solid #d470b2;
   padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 /* Buttons */
 button {
   background-color: #b85c90;
-  color: #fff;
+  color: white;
   border: none;
-  padding: 0.75em 1.5em;
-  font-size: 1rem;
-  border-radius: 5px;
+  padding: 10px 18px;
+  font-size: 1.1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #9a4c76;
 }
 
-/* Message output */
-#message-output, #mode-info, #booking-success, #form-success {
-  margin-top: 15px;
-  font-weight: 600;
-  color: #4CAF50;
-  text-align: center;
+/* Paragraphs */
+p {
+  margin-bottom: 15px;
 }
 
-/* Main Section Styles */
-main {
-  max-width: 960px;
-  margin: 0 auto 50px;
+em {
+  color: #666;
 }
 
 /* Services Section */
 #services ul {
   list-style-type: disc;
   padding-left: 20px;
-  margin-bottom: 1rem;
-  color: #555;
+  margin-bottom: 1em;
 }
 
 #services ul li {
-  margin-bottom: 0.5rem;
   font-weight: 500;
+  margin-bottom: 8px;
 }
 
 /* Service images */
 #services img {
-  width: 300px;           /* Set a fixed width */
-  height: 200px;          /* Set a fixed height */
-  object-fit: cover;      /* Crop image to fill the area, trimming excess */
-  border-radius: 10px;    /* Rounded corners for polish */
-  margin-right: 15px;     /* Space between images */
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  vertical-align: middle;
 }
 
-/* Appointment Section */
-#appointment p {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-style: italic;
-  color: #777;
-}
-
-/* Booking form styling */
-#booking-form, #consultationForm {
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: 20px auto 0;
-}
-
-#booking-form label, #consultationForm label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #444;
-}
-
-#booking-form input, #booking-form textarea, 
-#consultationForm input, #consultationForm textarea {
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 15px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Close button inside modal */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #b85c90;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #9a4c76;
+}
+
+/* Booking Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  padding: 8px 12px;
+  margin-top: 6px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
-#booking-form input:focus, #booking-form textarea:focus,
-#consultationForm input:focus, #consultationForm textarea:focus {
-  border-color: #b85c90;
-  outline: none;
+textarea {
+  resize: vertical;
 }
 
-/* Error messages */
 .error {
   color: #cc0000;
   font-size: 0.9rem;
-  margin-top: -12px;
-  margin-bottom: 12px;
+  margin-top: 4px;
 }
 
-/* Success messages */
-.success-message, .success {
+.success {
   color: #2a7d32;
-  font-size: 1rem;
   font-weight: 700;
+  margin-top: 10px;
   text-align: center;
 }
 
 /* Testimonials */
 #testimonials blockquote {
   font-style: italic;
-  color: #666;
-  border-left: 5px solid #b85c90;
-  padding-left: 15px;
-  margin: 10px 20px;
   background-color: #fff6fb;
+  border-left: 5px solid #b85c90;
+  margin: 10px 0;
+  padding: 10px 15px;
   border-radius: 5px;
+  color: #666;
 }
 
 /* FAQ style */
 .faq-item {
-  background-color: white;
+  background: white;
   margin: 15px auto;
   padding: 15px;
   max-width: 700px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .faq-question {
+  color: #b85c90;
   font-weight: 700;
   cursor: pointer;
-  color: #b85c90;
 }
 
 .faq-answer {
   margin-top: 10px;
-  color: #555;
+  display: none;
+  color: #444;
   line-height: 1.4;
 }
 
 /* Dropdown Service Selector */
 .dropdown {
+  margin: 30px auto;
   max-width: 500px;
-  margin: 40px auto;
-  text-align: left;
 }
 
 .dropdown label {
-  display: block;
   font-weight: 600;
   margin-bottom: 6px;
+  display: block;
   color: #444;
 }
 
 .dropdown select {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 10px 12px;
   font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
 }
 
-/* Tab content */
+#dropdown-output {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #b85c90;
+}
+
+/* Tab Content */
 .tab-content {
+  display: none;
   max-width: 700px;
-  margin: 20px auto 40px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  margin: 30px auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Consultation Form same style as booking */
-#consultationForm {
-  max-width: 600px;
-  margin: 40px auto 100px;
+.tab-content.active {
+  display: block;
 }
 
 /* Footer */
-footer#footer {
+#footer {
   text-align: center;
   padding: 25px 15px;
   background-color: #b85c90;
   color: white;
   font-weight: 700;
+  margin-top: 50px;
 }
 
-/* Toggle Light/Dark Mode Button */
+/* Light/Dark Mode */
+body.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode label,
+body.dark-mode .dropdown label,
+body.dark-mode .faq-question,
+body.dark-mode #dropdown-output {
+  color: #f7c0eb;
+}
+
+body.dark-mode #footer {
+  background-color: #9a4c76;
+}
+
+body.dark-mode blockquote {
+  background-color: #3a0c3a;
+  border-left-color: #f7c0eb;
+  color: #f7c0eb;
+}
+
+/* Light/Dark Mode button */
 #toggle-mode-btn {
   display: block;
-  margin: 0 auto 30px;
-  padding: 10px 30px;
+  margin: 30px auto 0;
+  padding: 10px 35px;
   border-radius: 50px;
   border: none;
+  background-color: #b85c90;
+  color: white;
   font-weight: 600;
-}
-
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
-  overflow: auto; /* Enable scroll if needed */
-}
-
-.modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 500px;
-  position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-.close {
-  position: absolute;
-  top: 10px; right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #b85c90;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.close:hover {
-  color: #9a4c76;
+#toggle-mode-btn:hover {
+  background-color: #9a4c76;
 }
